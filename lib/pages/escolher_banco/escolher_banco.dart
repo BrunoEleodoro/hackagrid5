@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:hackagrid5/pages/escolher_banco/escolher_banco.dart';
 import 'package:hackagrid5/pages/home.dart';
 
-class CadastroScreen extends StatefulWidget {
+class EscolherBancoScreen extends StatefulWidget {
   @override
-  _CadastroScreenState createState() => _CadastroScreenState();
+  _EscolherBancoScreenState createState() => _EscolherBancoScreenState();
 }
 
-class _CadastroScreenState extends State<CadastroScreen> {
+class _EscolherBancoScreenState extends State<EscolherBancoScreen> {
+  var bankList = [
+    {
+      'title': 'Caixa Econômica Federal',
+      'image':
+          'https://seeklogo.com/images/C/caixa-economica-federal-logo-00F5A18C90-seeklogo.com.png'
+    },
+    {
+      'title': 'Itaú',
+      'image':
+          'https://www.itau.com.br/content/dam/itau/varejo/logo-itau-varejo-desktop.png'
+    },
+    {
+      'title': 'Bradesco',
+      'image':
+          'https://i.pinimg.com/originals/69/0a/34/690a348df1b1cc7f3847246ddfe37743.jpg'
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,24 +52,28 @@ class _CadastroScreenState extends State<CadastroScreen> {
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
                           children: [
+                            Text(
+                              'Escolha seu banco:',
+                              textAlign: TextAlign.center,
+                            ),
                             SizedBox(
                               height: 20,
                             ),
-                            TextFormField(
-                              decoration: InputDecoration(
-                                  hintText: 'Numero do Celular',
-                                  prefixIcon: Icon(Icons.phone)),
-                            ),
+                            ListView.builder(
+                                itemCount: bankList.length,
+                                shrinkWrap: true,
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    leading: CircleAvatar(
+                                      backgroundImage: NetworkImage(
+                                          bankList[index]['image']),
+                                    ),
+                                    title: Text(bankList[index]['title']),
+                                    onTap: () {},
+                                  );
+                                }),
                             SizedBox(
-                              height: 40,
-                            ),
-                            TextFormField(
-                              decoration: InputDecoration(
-                                  hintText: 'Data de nascimento',
-                                  prefixIcon: Icon(Icons.person)),
-                            ),
-                            SizedBox(
-                              height: 40,
+                              height: 30,
                             ),
                             Container(
                               alignment: Alignment.centerRight,
@@ -63,14 +83,14 @@ class _CadastroScreenState extends State<CadastroScreen> {
                                 onPressed: () {
                                   Navigator.of(context)
                                       .pushReplacement(MaterialPageRoute(
-                                    builder: (context) => EscolherBancoScreen(),
+                                    builder: (context) => HomeScreen(),
                                   ));
                                 },
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    SelectableText('FINALIZAR CADASTRO',
+                                    SelectableText('PROXIMO',
                                         style: TextStyle(color: Colors.white)),
                                     Icon(
                                       Icons.navigate_next,

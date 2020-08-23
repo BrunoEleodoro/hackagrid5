@@ -1,5 +1,6 @@
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -17,12 +18,15 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Align(
               alignment: Alignment.topCenter,
-              child: Container(
-                width: double.maxFinite,
-                child: Column(
-                  children: [],
-                ),
-              ),
+              child: CreditCardWidget(
+                  cardNumber: '5129381344397012',
+                  expiryDate: '08/22',
+                  cardHolderName: 'R\$1523,22',
+                  cvvCode: '123',
+                  showBackView: false,
+                  animationDuration: Duration(milliseconds: 500),
+                  height: 250,
+                  width: double.maxFinite),
             ),
             Align(
               alignment: Alignment.bottomCenter,
