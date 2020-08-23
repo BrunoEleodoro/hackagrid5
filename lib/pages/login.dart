@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'MEI Facil',
+      title: 'Gestão Fácil',
       logo: 'assets/login.png',
       onLogin: _authUser,
       onSignup: _singUp,
@@ -47,12 +47,12 @@ class _LoginScreenState extends State<LoginScreen> {
         }
       },
       messages: LoginMessages(
-        usernameHint: 'CPF',
-        signupButton: 'CADASTRAR',
-        forgotPasswordButton: 'ESQUECEU A SENHA?',
-        confirmPasswordHint: 'CONFIRME SUA SENHA',
-        passwordHint: 'SENHA',
-      ),
+          usernameHint: 'CPF',
+          signupButton: 'CADASTRAR',
+          forgotPasswordButton: 'ESQUECEU A SENHA?',
+          confirmPasswordHint: 'CONFIRME SUA SENHA',
+          passwordHint: 'SENHA',
+          confirmPasswordError: 'Senhas não são iguais'),
       onRecoverPassword: (_) => Future(null),
     );
   }

@@ -49,75 +49,77 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: double.maxFinite,
                   height: MediaQuery.of(context).size.height / 1.9,
                   // height: 100,
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    alignment: WrapAlignment.center,
-                    children: [
-                      Container(
-                        width: 200,
-                        height: 200,
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.network(
-                                'https://s2.glbimg.com/XJP5s9s0EJEpdM-K0yWRmstm06s=/0x0:945x530/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/T/d/9KN7bBSd6UKk4hcitczA/marca-pix-1-.jpg',
-                                width: 120,
-                              ),
-                              Text('PIX')
-                            ],
+                  child: SingleChildScrollView(
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      alignment: WrapAlignment.center,
+                      children: [
+                        Container(
+                          width: 200,
+                          height: 200,
+                          child: Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://s2.glbimg.com/XJP5s9s0EJEpdM-K0yWRmstm06s=/0x0:945x530/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/T/d/9KN7bBSd6UKk4hcitczA/marca-pix-1-.jpg',
+                                  width: 120,
+                                ),
+                                Text('PIX')
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: 200,
-                        height: 200,
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.network(
-                                'https://www.resultatec.com.br/wp-content/uploads/2014/09/icon_-relatorios.png',
-                                width: 120,
-                              ),
-                              Text('Gerar Relatorio')
-                            ],
+                        Container(
+                          width: 200,
+                          height: 200,
+                          child: Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://www.resultatec.com.br/wp-content/uploads/2014/09/icon_-relatorios.png',
+                                  width: 120,
+                                ),
+                                Text('Gerar Relatorio')
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: 200,
-                        height: 200,
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.network(
-                                'https://image.flaticon.com/icons/png/512/988/988126.png',
-                                width: 120,
-                              ),
-                              Text('Receber ou Pagar')
-                            ],
+                        Container(
+                          width: 200,
+                          height: 200,
+                          child: Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://image.flaticon.com/icons/png/512/988/988126.png',
+                                  width: 120,
+                                ),
+                                Text('Receber ou Pagar')
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: 200,
-                        height: 200,
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.network(
-                                'https://www.growdeck.com.br/wp-content/uploads/2019/06/boleto-icon.png',
-                                width: 120,
-                              ),
-                              Text('Boleto')
-                            ],
+                        Container(
+                          width: 200,
+                          height: 200,
+                          child: Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://www.growdeck.com.br/wp-content/uploads/2019/06/boleto-icon.png',
+                                  width: 120,
+                                ),
+                                Text('Boleto')
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )),
             )
           ],

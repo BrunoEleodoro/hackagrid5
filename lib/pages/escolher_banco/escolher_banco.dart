@@ -36,7 +36,7 @@ class _EscolherBancoScreenState extends State<EscolherBancoScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'MEI Facil',
+                  'Gestão Fácil',
                   style: TextStyle(color: Colors.white, fontSize: 40),
                   textAlign: TextAlign.center,
                 ),

@@ -20,7 +20,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'MEI Facil',
+                  'Gestão Fácil',
                   style: TextStyle(color: Colors.white, fontSize: 40),
                   textAlign: TextAlign.center,
                 ),
