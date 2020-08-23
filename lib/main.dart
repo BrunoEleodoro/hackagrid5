@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hackagrid5/pages/cadastro/cadastro.dart';
 import 'package:hackagrid5/pages/home.dart';
 import 'package:hackagrid5/pages/login.dart';
 
@@ -18,18 +19,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         fontFamily: GoogleFonts.ptSans().fontFamily,
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.ptSans().fontFamily,
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       themeMode: ThemeMode.light,
       // home: HomeScreen()
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      home: CadastroScreen(),
     );
   }
 }

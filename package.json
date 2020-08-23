@@ -2,6 +2,7 @@
   "name": "hackagrid5",
   "version": "1.0.0",
   "description": "A new Flutter project.",
+  "homepage": "https://brunoeleodoro.github.io/hackagrid5/",
   "main": "index.js",
   "directories": {
     "lib": "lib",
