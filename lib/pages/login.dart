@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,6 +6,7 @@ import 'package:hackagrid5/pages/cadastro/cadastro.dart';
 import 'package:hackagrid5/pages/home.dart';
 import 'package:hackagrid5/pages/login/cadastro_fields.dart';
 import 'package:hackagrid5/pages/login/login_fields.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -16,6 +18,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<String> _authUser(LoginData data) async {
     print('Name: ${data.name}, Password: ${data.password}');
+    try {
+      Response res = await Dio().post('http://brunoeleodoro.com:4000/login',
+          options: RequestOptions(
+              data: {'CPF': data.name, 'Password': data.password}));
+      print(res);
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('token', res.data);
+    } catch (ex) {
+      return "Login ou senha errados!";
+    }
     type = "login";
     return null;
   }
