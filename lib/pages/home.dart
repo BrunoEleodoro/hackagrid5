@@ -2,6 +2,7 @@ import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import "package:flutter_custom_credit_card_ui/flutter_custom_credit_card_ui.dart";
 import 'package:hackagrid5/pages/gerar_pix/gerar_pix.dart';
+import 'package:hackagrid5/pages/score/score.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -87,13 +88,18 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: FancyBottomNavigation(
           tabs: [
             TabData(iconData: Icons.home, title: "Início"),
-            TabData(iconData: Icons.bar_chart, title: "Relatórios"),
-            TabData(iconData: Icons.shopping_cart, title: "Basket")
+            TabData(iconData: Icons.bar_chart, title: "Score"),
           ],
           onTabChangedListener: (position) {
-            setState(() {
-              currentPage = position;
-            });
+            if (position == 1) {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ScoreScreen(),
+              ));
+            } else {
+              setState(() {
+                currentPage = position;
+              });
+            }
           },
         ));
   }

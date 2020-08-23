@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackagrid5/pages/home.dart';
 import 'package:hackagrid5/pages/login.dart';
+import 'package:hackagrid5/pages/score/score.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       // home: HomeScreen()
       // home: EscolherBancoScreen(),
       home: LoginScreen(),
+      // home: ScoreScreen(),
       // home: CadastroScreen(),
     );
   }
