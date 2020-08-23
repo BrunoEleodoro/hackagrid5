@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hackagrid5/pages/cadastro/cadastro.dart';
+import 'package:hackagrid5/pages/home.dart';
 import 'package:hackagrid5/pages/login/cadastro_fields.dart';
 import 'package:hackagrid5/pages/login/login_fields.dart';
 
@@ -11,11 +12,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String type = "login";
+
   Future<String> _authUser(LoginData data) async {
     print('Name: ${data.name}, Password: ${data.password}');
-    if (data.name == "abc") {
-      return "error";
-    }
+    type = "login";
+    return null;
+  }
+
+  Future<String> _singUp(LoginData data) async {
+    print('Name: ${data.name}, Password: ${data.password}');
+    type = "signup";
     return null;
   }
 
@@ -25,12 +32,19 @@ class _LoginScreenState extends State<LoginScreen> {
       title: 'MEI Facil',
       logo: 'assets/login.png',
       onLogin: _authUser,
-      onSignup: (_) => Future(null),
+      onSignup: _singUp,
       emailValidator: (_) => null,
       onSubmitAnimationCompleted: () {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => CadastroScreen(),
-        ));
+        print(type);
+        if (type == "login") {
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ));
+        } else {
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => CadastroScreen(),
+          ));
+        }
       },
       messages: LoginMessages(
         usernameHint: 'CPF',
