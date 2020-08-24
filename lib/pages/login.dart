@@ -26,6 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString('token', res.data);
     } catch (ex) {
+      print('ex');
+      print(ex);
       return "Login ou senha errados!";
     }
     type = "login";
