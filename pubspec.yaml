@@ -39,6 +39,9 @@ dependencies:
   shared_preferences: ^0.5.10
   qr_flutter: ^3.2.0
   flutter_gauge: ^1.0.8
+  json_table: ^1.4.0
+  pdf: ^1.11.0
+  url_launcher: ^5.5.0
 
 dev_dependencies:
   flutter_test:

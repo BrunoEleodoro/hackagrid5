@@ -1,8 +1,13 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dio/dio.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import "package:flutter_custom_credit_card_ui/flutter_custom_credit_card_ui.dart";
 import 'package:hackagrid5/pages/gerar_pix/gerar_pix.dart';
+import 'package:hackagrid5/pages/login.dart';
+import 'package:hackagrid5/pages/relatorios/relatorios.dart';
 import 'package:hackagrid5/pages/score/score.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,10 +31,67 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      AwesomeDialog(
+        context: context,
+        dialogType: DialogType.INFO,
+        animType: AnimType.BOTTOMSLIDE,
+        title: 'Consentimento',
+        desc:
+            'Precisamos do seu consentimento dos seus dados\n\nConcorda conceder seus dados bancários?',
+        btnCancelOnPress: () {
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => LoginScreen(),
+          ));
+        },
+        btnOkOnPress: () async {
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          Response response = await Dio()
+              .post('http://brunoeleodoro.com:4000/create-account-consent',
+                  options: RequestOptions(data: {
+                    "Data": {
+                      "Permissions": [
+                        "ReadAccountsBasic",
+                        "ReadAccountsDetail",
+                        "ReadBalances",
+                        "ReadBeneficiariesBasic",
+                        "ReadBeneficiariesDetail",
+                        "ReadDirectDebits",
+                        "ReadTransactionsBasic",
+                        "ReadTransactionsCredits",
+                        "ReadTransactionsDebits",
+                        "ReadTransactionsDetail",
+                        "ReadProducts",
+                        "ReadStandingOrdersDetail",
+                        "ReadProducts",
+                        "ReadStandingOrdersDetail",
+                        "ReadStatementsDetail",
+                        "ReadParty",
+                        "ReadOffers",
+                        "ReadScheduledPaymentsBasic",
+                        "ReadScheduledPaymentsDetail",
+                        "ReadPartyPSU"
+                      ]
+                    },
+                    "Risk": {}
+                  }, headers: {
+                    'Authorization': prefs.get('token')
+                  }));
+          print(response.data);
+        },
+      )..show();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     Widget selectedOption;
     if (option == "pix") {
       selectedOption = GerarPixScreen();
+    } else if (option == "report") {
+      selectedOption = RelatoriosScreen();
     }
     return Scaffold(
         backgroundColor: Color(0XFF4A2FA8),
