@@ -1,5 +1,13 @@
 <h2 align="center">Gestão Fácil</h2>
 
+<table>
+  <tr>
+    <td><img src="docs/images/login.png" width="200"></td>
+    <td><img src="docs/images/consentimento.png" width="200"></td>
+    <td><img src="docs/images/pix_qrcode.png" width="200"></td>
+    <td><img src="docs/images/score.png" width="200"></td>
+  </tr>
+</table>
 ___
 
 <p align="center"><img src="https://user-images.githubusercontent.com/56268564/90991665-5e11fb00-e581-11ea-850b-6cb1852ab876.jpeg" /></p>
