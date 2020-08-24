@@ -55,6 +55,10 @@ No grupo dos MEI, o registro dos dados de gastos e das receitas que são realiza
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - GR1D APIs
+  - PIX:  https://github.com/BrunoEleodoro/hackagrid5/blob/master/lib/pages/gerar_pix/gerar_pix.dart
+  - LOGIN: https://github.com/BrunoEleodoro/hackagrid5/blob/master/lib/pages/login.dart#L23
+  - API DE SCORE: https://github.com/BrunoEleodoro/hackagrid5/blob/master/lib/pages/score/score.dart#L21
+  - CONSENTIMENTO: https://github.com/BrunoEleodoro/hackagrid5/blob/master/lib/pages/home.dart#L52
 - NodeJS
 - Flutter
 
